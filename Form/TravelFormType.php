@@ -5,6 +5,7 @@ namespace Dem3trio\CarbonProfilerBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TravelFormType extends AbstractType
 {
@@ -14,5 +15,12 @@ class TravelFormType extends AbstractType
         $builder->add('date', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', array('data' => $now));
         $builder->add('submit', 'Symfony\Component\Form\Extension\Core\Type\SubmitType' );
         return $builder;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'csrf_protection' => false,
+        ));
     }
 }
