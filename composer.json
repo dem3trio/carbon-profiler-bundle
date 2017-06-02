@@ -14,7 +14,7 @@
         }
     ],
     "autoload": {
-        "psr-4": {"Dem3trio\\CarbonProfilerBundle" : "."}
+        "psr-4": {"Dem3trio\\CarbonProfilerBundle\\" : "."}
     },
     "extra": {
         "branch-alias": {
