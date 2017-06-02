@@ -1,9 +1,9 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle\DataCollector;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\DataCollector;
 
 
-use Dem3trio\CarbonProfilerBundle\TimeMachine;
+use Dem3trio\Bundle\CarbonProfilerBundle\TimeMachine;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,7 +38,7 @@ class CarbonDataCollector extends DataCollector
 
     private function createForm()
     {
-        $form = $this->formFactory->create('Dem3trio\CarbonProfilerBundle\Form\TravelFormType', null,
+        $form = $this->formFactory->create('Dem3trio\Bundle\CarbonProfilerBundle\Form\TravelFormType', null,
             array('action' => $this->router->generate('_time_machine_travel')));
 
         return $this->twig->render('@CarbonProfiler/Form/form.html.twig', array('form' => $form->createView()));

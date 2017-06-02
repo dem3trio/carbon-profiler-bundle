@@ -1,6 +1,6 @@
 services:
   dem3trio.carbon_collector:
-    class: Dem3trio\CarbonProfilerBundle\DataCollector\CarbonDataCollector
+    class: Dem3trio\Bundle\CarbonProfilerBundle\DataCollector\CarbonDataCollector
     arguments:
       - '@dem3trio.time_machine'
       - '@twig'
@@ -14,21 +14,21 @@ services:
     public: false
 
   dem3trio.carbon.session_save_handler:
-    class: Dem3trio\CarbonProfilerBundle\SaveHandler\SessionSaveHandler
+    class: Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler\SessionSaveHandler
     arguments:
       - '@session'
 
   dem3trio.carbon.file_save_handler:
-      class: Dem3trio\CarbonProfilerBundle\SaveHandler\FileSaveHandler
+      class: Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler\FileSaveHandler
 
   dem3trio.time_machine:
-    class: Dem3trio\CarbonProfilerBundle\TimeMachine
+    class: Dem3trio\Bundle\CarbonProfilerBundle\TimeMachine
     arguments:
       - '@dem3trio.carbon.file_save_handler'
 
 
   dem3trio.time_machine.request_listener:
-    class: Dem3trio\CarbonProfilerBundle\Listener\RequestListener
+    class: Dem3trio\Bundle\CarbonProfilerBundle\Listener\RequestListener
     arguments:
       - '@dem3trio.time_machine'
     tags:

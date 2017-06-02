@@ -1,6 +1,6 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle\SaveHandler;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler;
 
 
 use Carbon\Carbon;

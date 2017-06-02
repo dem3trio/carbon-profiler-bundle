@@ -1,6 +1,6 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle\DependencyInjection;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

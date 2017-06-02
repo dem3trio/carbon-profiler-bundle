@@ -1,10 +1,10 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle;
+namespace Dem3trio\Bundle\CarbonProfilerBundle;
 
 
 use Carbon\Carbon;
-use Dem3trio\CarbonProfilerBundle\SaveHandler\SaveHandlerInterface;
+use Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler\SaveHandlerInterface;
 
 class TimeMachine
 {

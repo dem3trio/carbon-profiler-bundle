@@ -1,6 +1,6 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle\DependencyInjection;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

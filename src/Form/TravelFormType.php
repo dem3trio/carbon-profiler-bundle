@@ -1,6 +1,6 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle\Form;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\Form;
 
 
 use Symfony\Component\Form\AbstractType;

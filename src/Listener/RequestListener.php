@@ -1,9 +1,9 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle\Listener;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\Listener;
 
 
-use Dem3trio\CarbonProfilerBundle\TimeMachine;
+use Dem3trio\Bundle\CarbonProfilerBundle\TimeMachine;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 class RequestListener

@@ -1,6 +1,6 @@
 <?php
 
-namespace Dem3trio\CarbonProfilerBundle;
+namespace Dem3trio\Bundle\CarbonProfilerBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
