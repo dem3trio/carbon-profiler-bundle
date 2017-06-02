@@ -1,5 +1,7 @@
 # Carbon Profiler Bundle
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/6174a606-6a58-41db-9692-0d8d35c2ac17/mini.png)](https://insight.sensiolabs.com/projects/6174a606-6a58-41db-9692-0d8d35c2ac17)
+
 Symfony 2/3 profiler extension, to change the Carbon php date in the whole project.
 
 
