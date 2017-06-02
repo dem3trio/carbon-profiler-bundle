@@ -42,3 +42,13 @@ the ```dev``` section.
 // 
 ```
 
+Add the routing file under the routing_dev.yml file
+
+```yml
+# app/config/routing_dev.yml
+
+_time_machine:
+    resource: '@CarbonProfilerBundle:Resources/config/routing.yml'
+    preix: /_time_machine
+    
+```
