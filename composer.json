@@ -12,5 +12,13 @@
             "name": "Daniel González",
             "email": "dgzaballos@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {"Dem3trio\\CarbonProfilerBundle" : "."}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
 }
