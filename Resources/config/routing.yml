@@ -1,0 +1,7 @@
+_time_machine_travel:
+    path:     /travel
+    defaults: { _controller: CarbonProfilerBundle:TimeMachine:travel }
+
+_time_machine_back_to_present:
+    path:     /back
+    defaults: { _controller: CarbonProfilerBundle:TimeMachine:reset }

@@ -1,0 +1,22 @@
+{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+
+{% block toolbar %}
+    {% set icon %}
+        {# this is the content displayed as a panel in the toolbar #}
+        <span class="sf-toolbar-value">Carbon</span>
+        {#<span class="sf-toolbar-label">ms</span>#}
+        {% set date = collector.date %}
+        <span class="sf-toolbar-status">{{ date | default('not using other date') }}</span>
+    {% endset %}
+
+    {% set text %}
+        {{ collector.form | raw }}
+
+        <a href="{{ path('_time_machine_back_to_present') }}">Back to present</a>
+    {% endset %}
+
+    {# the 'link' value set to 'false' means that this panel doesn't
+       show a section in the web profiler #}
+    {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
+    {{ include('CarbonProfilerBundle:Form:form_js.html.twig') }}
+{% endblock %}

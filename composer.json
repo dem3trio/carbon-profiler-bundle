@@ -1,0 +1,16 @@
+{
+    "name": "dem3trio/carbon-profiler-bundle",
+    "description": "Symfony 2/3 profiler add, to change the Carbon php date in the whole project.",
+    "require": {
+        "php": "^5.3.9",
+        "nesbot/carbon": "^1.22",
+        "symfony/symfony": "~2.8|~3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel González",
+            "email": "dgzaballos@gmail.com"
+        }
+    ]
+}

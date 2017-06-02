@@ -1,0 +1,32 @@
+services:
+  dem3trio.carbon_collector:
+    class: Dem3trio\CarbonProfilerBundle\DataCollector\CarbonDataCollector
+    arguments:
+      - '@dem3trio.time_machine'
+      - '@twig'
+      - '@form.factory'
+      - '@router'
+    tags:
+      -
+        name:     data_collector
+        template: 'CarbonProfilerBundle:DataCollector:template.html.twig'
+        id:       'dem3trio.carbon_collector'
+    public: false
+
+  dem3trio.carbon.session_save_handler:
+    class: Dem3trio\CarbonProfilerBundle\SaveHandler\SessionSaveHandler
+    arguments:
+      - '@session'
+
+  dem3trio.time_machine:
+    class: Dem3trio\CarbonProfilerBundle\TimeMachine
+    arguments:
+      - '@dem3trio.carbon.session_save_handler'
+
+
+  dem3trio.time_machine.request_listener:
+    class: Dem3trio\CarbonProfilerBundle\Listener\RequestListener
+    arguments:
+      - '@dem3trio.time_machine'
+    tags:
+        - { name: kernel.event_listener, event: kernel.request, priority: 255 }
