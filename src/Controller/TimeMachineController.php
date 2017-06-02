@@ -28,7 +28,7 @@ class TimeMachineController extends Controller
      */
     public function travelAction(Request $request)
     {
-        $form = $this->createForm('Dem3trio\Bundle\CarbonProfilerBundle\Form\TravelFormType');
+        $form = $this->createForm('Dem3trio\Bundle\CarbonProfilerBundle\Form\Type\TravelFormType');
         $form->handleRequest($request);
 
         if ($form->isValid()) {

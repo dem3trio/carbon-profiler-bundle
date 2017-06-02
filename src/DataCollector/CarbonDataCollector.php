@@ -60,7 +60,7 @@ class CarbonDataCollector extends DataCollector
 
     private function createForm()
     {
-        $form = $this->formFactory->create('Dem3trio\Bundle\CarbonProfilerBundle\Form\TravelFormType', null,
+        $form = $this->formFactory->create('Dem3trio\Bundle\CarbonProfilerBundle\Form\Type\TravelFormType', null,
             ['action' => $this->router->generate('_time_machine_travel')]);
 
         return $this->twig->render('@CarbonProfiler/Form/form.html.twig', ['form' => $form->createView()]);
