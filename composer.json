@@ -14,7 +14,7 @@
         "symfony/symfony": "~2.8|~3.0"
     },
     "autoload": {
-        "psr-4": {"Dem3trio\\CarbonProfilerBundle\\" : "src/"}
+        "psr-4": {"Dem3trio\\Bundle\\CarbonProfilerBundle\\" : "src/"}
     },
     "extra": {
         "branch-alias": {
