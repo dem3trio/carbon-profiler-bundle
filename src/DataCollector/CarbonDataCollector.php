@@ -1,7 +1,15 @@
 <?php
 
-namespace Dem3trio\Bundle\CarbonProfilerBundle\DataCollector;
+/*
+ * This file is part of the CarbonProfilerBundle
+ *
+ * (c) Daniel Gonzalez <dgzaballos@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Dem3trio\Bundle\CarbonProfilerBundle\DataCollector;
 
 use Dem3trio\Bundle\CarbonProfilerBundle\TimeMachine;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -17,8 +25,7 @@ class CarbonDataCollector extends DataCollector
     protected $formFactory;
     protected $router;
 
-
-    function __construct(TimeMachine $timeMachine, \Twig_Environment $twig, FormFactoryInterface $formFactory, RouterInterface $router)
+    public function __construct(TimeMachine $timeMachine, \Twig_Environment $twig, FormFactoryInterface $formFactory, RouterInterface $router)
     {
         $this->timeMachine = $timeMachine;
         $this->twig = $twig;
@@ -31,17 +38,9 @@ class CarbonDataCollector extends DataCollector
         $this->data['date'] = null;
         $this->data['form'] = $this->createForm();
 
-        if($this->timeMachine->timeIsSet()) {
+        if ($this->timeMachine->timeIsSet()) {
             $this->data['date'] = $this->timeMachine->getDate()->format('Y-m-d H:i:s');
         }
-    }
-
-    private function createForm()
-    {
-        $form = $this->formFactory->create('Dem3trio\Bundle\CarbonProfilerBundle\Form\TravelFormType', null,
-            array('action' => $this->router->generate('_time_machine_travel')));
-
-        return $this->twig->render('@CarbonProfiler/Form/form.html.twig', array('form' => $form->createView()));
     }
 
     public function getForm()
@@ -57,5 +56,13 @@ class CarbonDataCollector extends DataCollector
     public function getName()
     {
         return 'dem3trio.carbon_collector';
+    }
+
+    private function createForm()
+    {
+        $form = $this->formFactory->create('Dem3trio\Bundle\CarbonProfilerBundle\Form\TravelFormType', null,
+            ['action' => $this->router->generate('_time_machine_travel')]);
+
+        return $this->twig->render('@CarbonProfiler/Form/form.html.twig', ['form' => $form->createView()]);
     }
 }

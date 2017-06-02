@@ -1,13 +1,20 @@
 <?php
 
+/*
+ * This file is part of the CarbonProfilerBundle
+ *
+ * (c) Daniel Gonzalez <dgzaballos@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler;
 
-
 use Carbon\Carbon;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
- * Class FileSaveHandler
+ * Class FileSaveHandler.
  */
 class FileSaveHandler implements SaveHandlerInterface
 {
@@ -27,7 +34,7 @@ class FileSaveHandler implements SaveHandlerInterface
      */
     public function get()
     {
-        if(file_exists(self::FILE_NAME)) {
+        if (file_exists(self::FILE_NAME)) {
             return Carbon::createFromTimestamp(file_get_contents(self::FILE_NAME));
         }
 
@@ -36,9 +43,8 @@ class FileSaveHandler implements SaveHandlerInterface
 
     public function reset()
     {
-        if(file_exists(self::FILE_NAME)) {
+        if (file_exists(self::FILE_NAME)) {
             unlink(self::FILE_NAME);
         }
     }
-
 }

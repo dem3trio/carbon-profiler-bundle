@@ -1,13 +1,21 @@
 <?php
 
-namespace Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler;
+/*
+ * This file is part of the CarbonProfilerBundle
+ *
+ * (c) Daniel Gonzalez <dgzaballos@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler;
 
 use Carbon\Carbon;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
- * Class SessionSaveHandler
+ * Class SessionSaveHandler.
  */
 class SessionSaveHandler implements SaveHandlerInterface
 {
@@ -20,6 +28,7 @@ class SessionSaveHandler implements SaveHandlerInterface
 
     /**
      * SessionSaveHandler constructor.
+     *
      * @param SessionInterface $session
      */
     public function __construct(SessionInterface $session)
@@ -40,7 +49,7 @@ class SessionSaveHandler implements SaveHandlerInterface
      */
     public function get()
     {
-        if($this->session->has('_dem3trio.time_machine')) {
+        if ($this->session->has('_dem3trio.time_machine')) {
             return Carbon::createFromTimestamp($this->session->get(self::SESSION_KEY));
         }
 
@@ -49,9 +58,8 @@ class SessionSaveHandler implements SaveHandlerInterface
 
     public function reset()
     {
-        if($this->session->has('_dem3trio.time_machine')) {
+        if ($this->session->has('_dem3trio.time_machine')) {
             $this->session->remove(self::SESSION_KEY);
         }
     }
-
 }

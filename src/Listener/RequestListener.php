@@ -1,7 +1,15 @@
 <?php
 
-namespace Dem3trio\Bundle\CarbonProfilerBundle\Listener;
+/*
+ * This file is part of the CarbonProfilerBundle
+ *
+ * (c) Daniel Gonzalez <dgzaballos@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Dem3trio\Bundle\CarbonProfilerBundle\Listener;
 
 use Dem3trio\Bundle\CarbonProfilerBundle\TimeMachine;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
@@ -22,7 +30,7 @@ class RequestListener
             return;
         }
 
-        if($this->timeMachine->timeIsSet()) {
+        if ($this->timeMachine->timeIsSet()) {
             $date = $this->timeMachine->getDate();
             $this->timeMachine->travelTo($date);
         }
