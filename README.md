@@ -10,10 +10,8 @@ Symfony 2/3 profiler extension, to change the Carbon php date in the whole proje
 Install the package with composer.
 
 ```
-composer install dem3trio/carbon-profiler-bundle
+composer require dem3trio/carbon-profiler-bundle
 ```
-
-You can use the ```--require-dev``` option
 
 ## Configuration
 
