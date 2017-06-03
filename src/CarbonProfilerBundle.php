@@ -14,7 +14,7 @@ namespace Dem3trio\Bundle\CarbonProfilerBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Class CarbonProfilerBundle
+ * Class CarbonProfilerBundle.
  */
 class CarbonProfilerBundle extends Bundle
 {
