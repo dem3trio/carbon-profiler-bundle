@@ -18,6 +18,11 @@ use PHPUnit\Framework\TestCase;
 
 class TimeMachineTest extends TestCase implements SaveHandlerInterface
 {
+    /**
+     * @var null|Carbon
+     */
+    protected $when;
+
     public function test_travel_and_back()
     {
         $machine = new TimeMachine($this);
@@ -34,6 +39,31 @@ class TimeMachineTest extends TestCase implements SaveHandlerInterface
         $this->assertSame($now->format('Y-m-d'), $newNow->format('Y-m-d'));
     }
 
+    public function test_initializing()
+    {
+        $machine = new TimeMachine($this);
+
+        $this->assertNull($machine->getDate(), 'Date must be null when initializing.');
+    }
+
+    public function test_persistence()
+    {
+        $machine = new TimeMachine($this);
+
+        $now = new Carbon();
+        $strNow = $now->format('Y-m-d H:i:s');
+
+        $machine->travelTo($now);
+
+        $this->assertTrue($machine->timeIsSet());
+        $this->assertSame($strNow, $machine->getDate()->format('Y-m-d H:i:s'));
+
+        $machine->backToNow();
+
+        $this->assertFalse($machine->timeIsSet());
+        $this->assertNull($machine->getDate());
+    }
+
     /**
      * Save Handler interface method for testing.
      *
@@ -41,6 +71,7 @@ class TimeMachineTest extends TestCase implements SaveHandlerInterface
      */
     public function save(Carbon $date)
     {
+        $this->when = $date;
     }
 
     /**
@@ -48,6 +79,7 @@ class TimeMachineTest extends TestCase implements SaveHandlerInterface
      */
     public function get()
     {
+        return $this->when;
     }
 
     /**
@@ -55,5 +87,6 @@ class TimeMachineTest extends TestCase implements SaveHandlerInterface
      */
     public function reset()
     {
+        $this->when = null;
     }
 }
