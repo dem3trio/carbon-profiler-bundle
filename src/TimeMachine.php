@@ -15,7 +15,7 @@ use Carbon\Carbon;
 use Dem3trio\Bundle\CarbonProfilerBundle\SaveHandler\SaveHandlerInterface;
 
 /**
- * Class TimeMachine
+ * Class TimeMachine.
  */
 class TimeMachine
 {
