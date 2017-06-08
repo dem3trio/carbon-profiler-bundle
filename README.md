@@ -45,6 +45,6 @@ Add the routing file under the routing_dev.yml file
 
 _time_machine:
     resource: '@CarbonProfilerBundle:Resources/config/routing.yml'
-    preix: /_time_machine
+    prefix: /_time_machine
     
 ```
