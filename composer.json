@@ -23,6 +23,7 @@
     "autoload-dev": {
       "psr-4": {"Dem3trio\\Bundle\\CarbonProfilerBundle\\Tests\\" : "tests/"}
     },
+    "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
