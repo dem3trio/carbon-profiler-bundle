@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Dem3trio\Bundle\CarbonProfilerBundle\Form;
+namespace Dem3trio\Bundle\CarbonProfilerBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
