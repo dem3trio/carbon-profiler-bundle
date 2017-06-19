@@ -40,10 +40,10 @@ class TimeMachineController extends Controller
                 return $this->redirect($request->server->get('HTTP_REFERER'));
             }
 
-            return new JsonResponse(['status' => 'ok']);
+            return new JsonResponse(array('status' => 'ok'));
         }
 
-        return new JsonResponse(['status' => 'failed']);
+        return new JsonResponse(array('status' => 'failed'));
     }
 
     /**
@@ -59,6 +59,6 @@ class TimeMachineController extends Controller
             return $this->redirect($request->server->get('HTTP_REFERER'));
         }
 
-        return new JsonResponse(['status' => 'ok']);
+        return new JsonResponse(array('status' => 'ok'));
     }
 }

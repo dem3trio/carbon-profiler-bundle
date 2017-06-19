@@ -20,7 +20,7 @@ class TravelFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $now = new \DateTime();
-        $builder->add('date', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', ['data' => $now]);
+        $builder->add('date', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', array('data' => $now));
         $builder->add('submit', 'Symfony\Component\Form\Extension\Core\Type\SubmitType');
 
         return $builder;
@@ -28,8 +28,8 @@ class TravelFormType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
+        $resolver->setDefaults(array(
             'csrf_protection' => false,
-        ]);
+        ));
     }
 }
