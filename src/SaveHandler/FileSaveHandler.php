@@ -18,7 +18,6 @@ use Carbon\Carbon;
  */
 class FileSaveHandler implements SaveHandlerInterface
 {
-    /** ToDo: make this through parameters */
     const FILE_NAME = '/tmp/_dem3trio_time_machine.lock';
 
     /**
