@@ -58,6 +58,11 @@ class CarbonDataCollector extends DataCollector
         return 'dem3trio.carbon_collector';
     }
 
+    public function reset()
+    {
+        $this->data = array();
+    }
+
     private function createForm()
     {
         $form = $this->formFactory->create('Dem3trio\Bundle\CarbonProfilerBundle\Form\Type\TravelFormType', null,
