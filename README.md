@@ -44,7 +44,7 @@ Add the routing file under the routing_dev.yml file
 # app/config/routing_dev.yml
 
 _time_machine:
-    resource: '@CarbonProfilerBundle:Resources/config/routing.yml'
+    resource: '@CarbonProfilerBundle/Resources/config/routing.yml'
     prefix: /_time_machine
     
 ```
