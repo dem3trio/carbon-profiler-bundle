@@ -2,18 +2,18 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/6174a606-6a58-41db-9692-0d8d35c2ac17/mini.png)](https://insight.sensiolabs.com/projects/6174a606-6a58-41db-9692-0d8d35c2ac17)
 
-Symfony 2/3 profiler extension, to change the Carbon php date in the whole project.
+Symfony 2/3/4 profiler extension, to change the Carbon php date in the whole project.
 
 
-## Instalation
+## Installation
 
 Install the package with composer.
 
 ```
-composer require dem3trio/carbon-profiler-bundle
+composer require dem3trio/carbon-profiler-bundle --dev
 ```
 
-## Configuration
+## Configuration Symfony >= 2.8 and SF <= 3.3
 
 As the package adds a new panel in the Symfony profiler, you should add the bundle under
 the ```dev``` section.
@@ -48,3 +48,29 @@ _time_machine:
     prefix: /_time_machine
     
 ```
+## Configuration for Symfony 3.4 and 4.x
+
+Add the bundle to your bundles.php
+
+```php
+// config/bundles.php
+
+<?php
+
+return [
+    // ...
+    Dem3trio\Bundle\CarbonProfilerBundle\CarbonProfilerBundle::class => ['dev' => true],
+    ];
+```
+
+And add the routing file:
+
+```yml
+# config/routes/dev/carbon_profiler.yml
+
+_time_machine:
+    resource: '@CarbonProfilerBundle/Resources/config/routing.yml'
+    prefix: /_time_machine
+
+```
+
