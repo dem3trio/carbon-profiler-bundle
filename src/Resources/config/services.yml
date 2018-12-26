@@ -9,7 +9,7 @@ services:
     tags:
       -
         name:     data_collector
-        template: 'CarbonProfilerBundle:DataCollector:template.html.twig'
+        template: '@CarbonProfiler/DataCollector/template.html.twig'
         id:       'dem3trio.carbon_collector'
     public: false
 

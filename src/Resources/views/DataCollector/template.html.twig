@@ -1,4 +1,4 @@
-{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
 
 {% block toolbar %}
     {% set icon %}
@@ -6,17 +6,67 @@
         <span class="sf-toolbar-value">Carbon</span>
         {#<span class="sf-toolbar-label">ms</span>#}
         {% set date = collector.date %}
-        <span class="sf-toolbar-status">{{ date | default('not using other date') }}</span>
+        <span class="sf-toolbar-status">{{ date | default('You are in the present') }}</span>
     {% endset %}
 
     {% set text %}
-        {{ collector.form | raw }}
+        <style>
+            #dem3trio_travel_time_form {
+                width: 100%;
+            }
+            #dem3trio_travel_time_form select {
+                background: #222222;
+                color: #FFFFFF;
+                border: none;
+                font-size: 12px;
+                height: 20px;
+                padding: 5px;
+                margin: 5px;
+            }
 
-        <a href="{{ path('_time_machine_back_to_present') }}">Back to present</a>
+            #dem3trio_travel_time_form button {
+                background: #222222;
+                color: #FFFFFF;
+                font-size: 14px;
+                height: 20px;
+                padding: 5px;
+                border: none;
+                display: block;
+                width: 80%;
+                margin: auto;
+            }
+
+            #dem3trio_travel_time_form button:hover {
+                background: #DDDDDD;
+                color: #000000;
+                font-size: 14px;
+                height: 20px;
+                padding: 5px;
+                border: none;
+                display: block;
+                width: 80%;
+                margin: auto;
+                cursor: pointer;
+            }
+
+        </style>
+        <div id="dem3trio_travel_time_form">
+            {{ collector.form | raw }}
+        </div>
+
+        {% if date %}
+            <div class="sf-toolbar-info-piece">
+                <b>Back to the</b>
+                <span>
+                    <a class="back_to_present_button" href="{{ path('_time_machine_back_to_present') }}">present</a>
+                </span>
+            </div>
+
+        {% endif %}
     {% endset %}
 
     {# the 'link' value set to 'false' means that this panel doesn't
        show a section in the web profiler #}
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
-    {{ include('CarbonProfilerBundle:Form:form_js.html.twig') }}
+    {{ include('@CarbonProfiler/Form/form_js.html.twig') }}
 {% endblock %}

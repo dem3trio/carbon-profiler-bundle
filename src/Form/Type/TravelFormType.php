@@ -21,7 +21,7 @@ class TravelFormType extends AbstractType
     {
         $now = new \DateTime();
         $builder->add('date', 'Symfony\Component\Form\Extension\Core\Type\DateTimeType', array('data' => $now));
-        $builder->add('submit', 'Symfony\Component\Form\Extension\Core\Type\SubmitType');
+        $builder->add('submit', 'Symfony\Component\Form\Extension\Core\Type\SubmitType', array('label' => 'Go!'));
 
         return $builder;
     }

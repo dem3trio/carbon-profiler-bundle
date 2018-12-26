@@ -65,4 +65,10 @@ class CarbonDataCollector extends DataCollector
 
         return $this->twig->render('@CarbonProfiler/Form/form.html.twig', array('form' => $form->createView()));
     }
+
+    public function reset()
+    {
+        // TODO: Implement reset() method.
+    }
+
 }
