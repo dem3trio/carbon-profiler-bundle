@@ -25,6 +25,7 @@ services:
     class: Dem3trio\Bundle\CarbonProfilerBundle\TimeMachine
     arguments:
       - '@dem3trio.carbon.file_save_handler'
+    public: true
 
 
   dem3trio.time_machine.request_listener:

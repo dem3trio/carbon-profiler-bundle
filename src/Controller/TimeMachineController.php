@@ -31,7 +31,7 @@ class TimeMachineController extends Controller
         $form = $this->createForm('Dem3trio\Bundle\CarbonProfilerBundle\Form\Type\TravelFormType');
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             $carbonDate = Carbon::instance($data['date']);
             $this->get('dem3trio.time_machine')->travelTo($carbonDate);
